@@ -9,12 +9,12 @@
       font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f0f0f0;
+      background-color: #111; /* Dark background */
+      color: #fff;
     }
 
     header {
       background-color: #333;
-      color: #fff;
       padding: 20px;
       text-align: center;
     }
@@ -72,30 +72,41 @@
       transform: scale(1.1);
     }
 
-    #ad-section {
-      text-align: center;
-      margin-top: 20px;
+    /* LED lights */
+    .led-light {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background-color: #ff0000; /* Red color */
+      box-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 60px #ff0000, 0 0 80px #ff0000; /* Glow effect */
+      animation: blink 2s infinite; /* Blinking animation */
     }
 
-    .ad-banner {
-      width: 100%;
-      max-width: 728px;
-      margin: 20px auto;
-      border: 2px dashed #ccc;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
     }
 
-    .ad-banner:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    .led1 {
+      top: 50px;
+      left: 50px;
     }
 
-    .ad-banner img {
-      width: 100%;
-      height: auto;
+    .led2 {
+      top: 150px;
+      right: 50px;
+    }
+
+    .led3 {
+      bottom: 50px;
+      left: 50px;
+    }
+
+    .led4 {
+      bottom: 150px;
+      right: 50px;
     }
   </style>
 </head>
@@ -138,36 +149,15 @@
       <h2>About Us</h2>
       <p>Welcome to Awesome Gaming! We're passionate about games...</p>
     </section>
-
-    <section id="ad-section">
-      <div class="ad-banner">
-        <!-- Placeholder for ad content -->
-        <img src="https://via.placeholder.com/728x90" alt="Advertisement">
-      </div>
-    </section>
   </main>
 
   <footer>
     <p>&copy; 2024 Awesome Gaming. All rights reserved.</p>
   </footer>
 
-  <script>
-    // JavaScript logic
-    document.addEventListener('DOMContentLoaded', function() {
-      // Smooth scroll functionality
-      const links = document.querySelectorAll('nav a');
-      links.forEach(link => {
-        link.addEventListener('click', smoothScroll);
-      });
-    });
-
-    function smoothScroll(event) {
-      event.preventDefault();
-      const targetId = event.currentTarget.getAttribute('href').substring(1);
-      document.getElementById(targetId).scrollIntoView({
-        behavior: 'smooth'
-      });
-    }
-  </script>
+  <div class="led-light led1"></div>
+  <div class="led-light led2"></div>
+  <div class="led-light led3"></div>
+  <div class="led-light led4"></div>
 </body>
 </html>
