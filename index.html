@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Awesome Gaming Website</title>
+  <style>
+    /* CSS styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease-in-out;
+      font-size: 18px;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .game {
+      width: 200px;
+      height: 200px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      position: relative;
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .game:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .game img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .game:hover img {
+      transform: scale(1.1);
+    }
+
+    #ad-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .ad-banner {
+      width: 100%;
+      max-width: 728px;
+      margin: 20px auto;
+      border: 2px dashed #ccc;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .ad-banner:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .ad-banner img {
+      width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Awesome Gaming!</h1>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#games">Games</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <h2>Featured Game</h2>
+      <div class="game">
+        <!-- Featured game content goes here -->
+        <img src="https://via.placeholder.com/200x200" alt="Featured Game">
+      </div>
+    </section>
+
+    <section id="games">
+      <h2>Other Games</h2>
+      <div class="game-list">
+        <!-- List of other games goes here -->
+        <div class="game">
+          <img src="https://via.placeholder.com/200x200" alt="Game 1">
+        </div>
+        <div class="game">
+          <img src="https://via.placeholder.com/200x200" alt="Game 2">
+        </div>
+        <!-- Add more games as needed -->
+      </div>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>Welcome to Awesome Gaming! We're passionate about games...</p>
+    </section>
+
+    <section id="ad-section">
+      <div class="ad-banner">
+        <!-- Placeholder for ad content -->
+        <img src="https://via.placeholder.com/728x90" alt="Advertisement">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Awesome Gaming. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript logic
+    document.addEventListener('DOMContentLoaded', function() {
+      // Smooth scroll functionality
+      const links = document.querySelectorAll('nav a');
+      links.forEach(link => {
+        link.addEventListener('click', smoothScroll);
+      });
+    });
+
+    function smoothScroll(event) {
+      event.preventDefault();
+      const targetId = event.currentTarget.getAttribute('href').substring(1);
+      document.getElementById(targetId).scrollIntoView({
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
